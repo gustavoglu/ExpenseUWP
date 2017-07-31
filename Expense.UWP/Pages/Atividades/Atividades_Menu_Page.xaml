@@ -7,12 +7,40 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourcesDictionarys/RD_Layout.xaml"/>
+                
+            </ResourceDictionary.MergedDictionaries>
+
+            <Flyout x:Key="flyout_novaAtividadeReal">
+                <RelativePanel Name="rp_principal">
+                    <ComboBox Name="cb_projeto" Header="Projeto" HorizontalAlignment="Stretch" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True"  Margin="{StaticResource DEFAULT_MARGIN}"/>
+                    <ComboBox Name="cb_status" Header="Status" RelativePanel.Below="cb_projeto" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" HorizontalAlignment="Stretch"  Margin="{StaticResource DEFAULT_MARGIN}"/>
+                    <TextBox Name="tb_atividade" Header="Atividade" RelativePanel.Below="cb_status" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" Margin="{StaticResource DEFAULT_MARGIN}"/>
+                    <ToggleSwitch Name="ts_semTempo" Header="Sem Tempo" IsOn="True" OnContent="Sim" OffContent="Não" RelativePanel.Below="tb_atividade" Margin="{StaticResource DEFAULT_MARGIN}"></ToggleSwitch>
+                    <ToggleSwitch Name="ts_finalizada" Header="Finalizada" IsOn="false" OnContent="Sim" OffContent="Não"  RelativePanel.Below="tb_atividade" RelativePanel.RightOf="ts_semTempo" Margin="{StaticResource DEFAULT_MARGIN}"/>
+                    <DatePicker Name="dp_ini"  Header="Data Inicio" RelativePanel.Below="ts_semTempo" IsEnabled="False" Margin="{StaticResource DEFAULT_MARGIN}"/>
+                    <TimePicker Name="tp_ini"  Header="Iniciado as" RelativePanel.Below="dp_ini" IsEnabled="False" Margin="{StaticResource DEFAULT_MARGIN}"/>
+                    <DatePicker  Name="dp_fim" Header="Data Fim" RelativePanel.Below="tp_ini" IsEnabled="False" Margin="{StaticResource DEFAULT_MARGIN}"/>
+                    <TimePicker Name="tp_fim"  Header="Finalizado em" RelativePanel.Below="dp_fim" IsEnabled="False" Margin="{StaticResource DEFAULT_MARGIN}"/>
+                    <StackPanel Name="sp_botoes" Orientation="Horizontal" RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="tp_fim" Margin="{StaticResource DEFAULT_MARGIN}">
+                        <Button Name="b_cancelar" MinWidth="100" Content="Cancelar" Margin="{StaticResource DEFAULT_MARGIN}"/>
+                        <Button Name="b_salvar" MinWidth="100" Content="Salvar" Margin="{StaticResource DEFAULT_MARGIN}"/>
+                    </StackPanel>
+                </RelativePanel>
+            </Flyout>
+
+        </ResourceDictionary>
+    </Page.Resources>
+    
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton Name="abb_addAtividade" Icon="Add" />
+            <AppBarButton Name="abb_addAtividade" Icon="Add" IsAccessKeyScope="True"/>
         </CommandBar>
     </Page.BottomAppBar>
-    
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Pivot Name="pivot_principal">
             <PivotItem Header="Atividades Real.">

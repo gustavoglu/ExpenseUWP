@@ -32,22 +32,20 @@ namespace Expense.UWP.Pages.Atividades
 
         }
 
-        private async void Pivot_principal_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Pivot_principal_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var pivot = sender as Pivot;
             var pivotItemSelected = pivot.SelectedItem as PivotItem;
+
             if (pivotItemSelected.Header.ToString() == "Atividades Real.")
             {
-                MessageDialog msg = new MessageDialog("Atividade 1");
-                await msg.ShowAsync();
+                abb_addAtividade.Flyout = (Flyout)Resources["flyout_novaAtividadeReal"];
             }
             else
             {
-                MessageDialog msg = new MessageDialog("Atividade 2");
-                await msg.ShowAsync();
+                abb_addAtividade.Flyout = null;
             }
 
-            
         }
     }
 }

@@ -104,6 +104,9 @@
     <Compile Include="Pages\Atividades\Atividades_Realizadas_Page.xaml.cs">
       <DependentUpon>Atividades_Realizadas_Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Atividades\NovaAtividadeReal_Dialog.xaml.cs">
+      <DependentUpon>NovaAtividadeReal_Dialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Login\Login_Page.xaml.cs">
       <DependentUpon>Login_Page.xaml</DependentUpon>
     </Compile>
@@ -142,9 +145,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Atividades\NovaAtividadeReal_Dialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Login\Login_Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourcesDictionarys\RD_DataTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="ResourcesDictionarys\RD_Flyouts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
     <Page Include="ResourcesDictionarys\RD_Layout.xaml">
       <SubType>Designer</SubType>
