@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="Expense.UWP.Pages.Login.Login_Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Expense.UWP.Pages.Login"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourcesDictionarys/RD_Layout.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <RelativePanel Name="rp_principal" Padding="{StaticResource DEFAULT_PANDDING}">
+            <RelativePanel Name="rp_login" Padding="{StaticResource DEFAULT_PANDDING}" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
+                <TextBox Name="tb_usuario" Header="Usuario"  RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Margin="{StaticResource DEFAULT_MARGIN}" />
+                <TextBox Name="tb_senha" Header="Senha" RelativePanel.Below="tb_usuario" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Margin="{StaticResource DEFAULT_MARGIN}"/>
+                <Button Name="b_login" Content="Login" HorizontalAlignment="Stretch" RelativePanel.Below="tb_senha" Margin="{StaticResource DEFAULT_MARGIN}" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" />
+
+            </RelativePanel>
+        </RelativePanel>
+    </Grid>
+</Page>

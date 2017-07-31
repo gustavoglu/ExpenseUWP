@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="Expense.UWP.Pages.Atividades.Atividades_Menu_Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Expense.UWP.Pages.Atividades"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Name="abb_addAtividade" Icon="Add" />
+        </CommandBar>
+    </Page.BottomAppBar>
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot Name="pivot_principal">
+            <PivotItem Header="Atividades Real.">
+                <RelativePanel Name="rp_atividadesReal">
+                    <ListView Name="listV_atividadesReal"></ListView>
+                </RelativePanel>
+            </PivotItem>
+            <PivotItem Header="Atividades Prev."></PivotItem>
+        </Pivot>
+    </Grid>
+</Page>
